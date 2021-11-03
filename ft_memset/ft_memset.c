@@ -6,7 +6,7 @@
 /*   By: ldamiens <ldamiens@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:06:53 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/03 12:42:59 by ldamiens         ###   ########lyon.fr   */
+/*   Updated: 2021/11/03 12:49:15 by ldamiens         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memset(void *ptr, int value, size_t count)
 {
-	size_t	index;
-	char	*test;
+	size_t			index;
+	unsigned char	*test;
 
 	index = 0;
 	test = ptr;
