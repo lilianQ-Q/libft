@@ -6,11 +6,11 @@
 /*   By: ldamiens <ldamiens@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:18:30 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/02 15:29:20 by ldamiens         ###   ########lyon.fr   */
+/*   Updated: 2021/11/03 16:34:15 by ldamiens         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int character)
+int	ft_isascii(int character)
 {
 	if (character >= 0 && character <= 127)
 		return (1);
