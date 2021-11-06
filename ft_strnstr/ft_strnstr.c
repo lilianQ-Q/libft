@@ -6,7 +6,7 @@
 /*   By: ldamiens <ldamiens@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:35:35 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/04 14:59:55 by ldamiens         ###   ########lyon.fr   */
+/*   Updated: 2021/11/06 18:46:20 by ldamiens         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,4 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		index++;
 	}
 	return (0);
-}
-
-int main()
-{
-	char test[] = "salut les copains";
-	char oui[] = "les copains";
-	printf("Retour de la fonction : %s\n", ft_strnstr(test, oui, 17));
 }
