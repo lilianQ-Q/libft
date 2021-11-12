@@ -23,20 +23,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (&((char *)haystack)[0]);
 	while (index < len && haystack[index])
 	{
-		if (haystack[index] == needle[0])
+		second = 0;
+		while (haystack[index + second] && (index + second) <= len)
 		{
-			second = 0;
-			while (haystack[index + second] && needle[second])
-			{
-				if (needle[second + 1] == '\0')
-					if (ft_strlen(&((char *)haystack)[index]) <= len)
-						return (&((char *)haystack)[index]);
-				second++;
-			}
-			if (second == ft_strlen(needle) && second < len)
+			if (needle[second + 1] == '\0')
 				return (&((char *)haystack)[index]);
+			second++;
 		}
 		index++;
+	}
 	}
 	return (0);
 }
