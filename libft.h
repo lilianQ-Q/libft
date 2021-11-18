@@ -6,7 +6,7 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:13:41 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/18 16:11:17 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:53:58 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <string.h>
 
 typedef struct s_list
 {

@@ -6,11 +6,10 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 14:49:05 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/16 17:46:36 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:55:27 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

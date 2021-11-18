@@ -6,12 +6,11 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:30:42 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/16 16:04:29 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:55:14 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	count_words(const char *str, char sep)
 {

@@ -6,14 +6,14 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 15:08:03 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/16 17:37:43 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:56:42 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	contains(char const *set, char c)
+static int	contains(char const *set, char c)
 {
 	int	index;
 
@@ -27,7 +27,7 @@ int	contains(char const *set, char c)
 	return (0);
 }
 
-int	diff(int start, int end)
+static int	diff(int start, int end)
 {
 	int	index;
 
@@ -37,7 +37,7 @@ int	diff(int start, int end)
 	return (index);
 }
 
-int	get_start_index(char const *s1, char const *set)
+static int	get_start_index(char const *s1, char const *set)
 {
 	int	index;
 
@@ -51,7 +51,7 @@ int	get_start_index(char const *s1, char const *set)
 	return (0);
 }
 
-int	get_end_index(char const *s1, char const *set)
+static int	get_end_index(char const *s1, char const *set)
 {
 	int	index;
 
@@ -89,11 +89,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr[index] = '\0';
 	return (ptr);
 }
-
-/*
-int main()
-{
-	char test[] = "tripouille     xxx";
-	char set[] = " x";
-	printf("%s\n", ft_strtrim(test, set));
-}*/

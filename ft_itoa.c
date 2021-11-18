@@ -6,12 +6,11 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 09:29:17 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/18 16:38:01 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:53:14 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static char	*reverse_string(char *restrict string)
 {
