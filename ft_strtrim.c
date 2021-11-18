@@ -6,45 +6,38 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 15:08:03 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/11 19:50:26 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:37:43 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	contains(char const *array, char character)
+int	contains(char const *set, char c)
 {
 	int	index;
 
 	index = 0;
-	while (array[index])
+	while (set[index])
 	{
-		if (array[index] == character)
+		if (set[index] == c)
 			return (1);
 		index++;
 	}
 	return (0);
 }
 
-void	reverse(char *string)
+int	diff(int start, int end)
 {
-	int		index;
-	int		len;
-	char	tmp;
+	int	index;
 
 	index = 0;
-	len = ft_strlen(string);
-	while (index < len / 2)
-	{
-		tmp = string[index];
-		string[index] = string[len - index - 1];
-		string[len - index - 1] = tmp;
+	while (start + index < end)
 		index++;
-	}
+	return (index);
 }
 
-int	getstart(char *s1, char const *set)
+int	get_start_index(char const *s1, char const *set)
 {
 	int	index;
 
@@ -58,44 +51,49 @@ int	getstart(char *s1, char const *set)
 	return (0);
 }
 
-int	getend(char *s1, char const *set)
+int	get_end_index(char const *s1, char const *set)
 {
 	int	index;
 
-	index = 0;
-	reverse(s1);
-	while (s1[index])
+	index = ft_strlen(s1) - 1;
+	while (index > 0)
 	{
 		if (!contains(set, s1[index]))
-		{
-			reverse(s1);
-			return (ft_strlen(s1) - index - 1);
-		}
-		index++;
+			return (index + 1);
+		index--;
 	}
-	reverse(s1);
-	return (ft_strlen(s1) - 1);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*ptr;
-	int		index;
+	int		start;
 	int		end;
-	int		second;
+	int		index;
+	char	*ptr;
 
-	index = getstart((char *)s1, set);
-	end = getend((char *)s1, set);
-	ptr = malloc((end - index + 1) * sizeof(char));
-	if (ptr == NULL)
+	if (!s1 || !set)
 		return (NULL);
-	second = 0;
-	while (index <= end)
+	start = get_start_index(s1, set);
+	end = get_end_index(s1, set);
+	ptr = (char *)malloc((diff(start, end) + 1) * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	index = 0;
+	while (start < end)
 	{
-		ptr[second] = s1[index];
+		ptr[index] = s1[start];
+		start++;
 		index++;
-		second++;
 	}
-	ptr[second + 1] = '\0';
+	ptr[index] = '\0';
 	return (ptr);
 }
+
+/*
+int main()
+{
+	char test[] = "tripouille     xxx";
+	char set[] = " x";
+	printf("%s\n", ft_strtrim(test, set));
+}*/

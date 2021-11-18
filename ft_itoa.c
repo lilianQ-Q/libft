@@ -6,7 +6,7 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 09:29:17 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/13 12:02:50 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:38:01 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,18 @@ char	*ft_itoa(int n)
 	char	*ptr;
 
 	index = 0;
-	ptr = (char *)malloc((count_number(n) + 1) * sizeof(char));
-	if (!ptr)
-		return (NULL);
 	if (n == 0)
 	{
+		ptr = (char *)malloc(2 * sizeof(char));
+		if (!ptr)
+			return (NULL);
 		ptr[0] = '0';
 		ptr[1] = '\0';
 		return (ptr);
 	}
+	ptr = (char *)malloc((count_number(n) + 1) * sizeof(char));
+	if (!ptr)
+		return (NULL);
 	fill_pointer(ptr, n);
 	return (reverse_string(ptr));
 }

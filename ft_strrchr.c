@@ -6,7 +6,7 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:38:14 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/11 14:26:08 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/12 16:09:17 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *string, int needle)
 	found = -1;
 	while (string[index])
 	{
-		if (string[index] == needle)
+		if (string[index] == (unsigned char)needle)
 			found = index;
 		index++;
 	}

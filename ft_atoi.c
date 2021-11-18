@@ -6,7 +6,7 @@
 /*   By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:43:54 by ldamiens          #+#    #+#             */
-/*   Updated: 2021/11/12 11:45:44 by ldamiens         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:43:46 by ldamiens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_issign(char character)
 
 int	ft_atoi(const char *str)
 {
-	int	index;
-	int	count;
-	int	sign;
+	size_t	index;
+	size_t	count;
+	int		sign;
 
 	index = 0;
 	count = 0;
