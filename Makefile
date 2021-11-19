@@ -6,7 +6,7 @@
 #    By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 13:52:24 by ldamiens          #+#    #+#              #
-#    Updated: 2021/11/18 16:19:51 by ldamiens         ###   ########.fr        #
+#    Updated: 2021/11/19 12:54:19 by ldamiens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,7 @@ INCLUDE			= $(addprefix $(PATH_INCLUDE)/, libft.h)
 #-------- Macro --------#
 
 CC				= gcc
-FLAGS			= -Wall -Wextra -Werror -O3
+FLAGS			= -Wall -Wextra -Werror
 RM				= rm -rf
 LIBC			= ar rc
 MAKEFILE		= Makefile
