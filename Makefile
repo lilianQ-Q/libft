@@ -6,7 +6,7 @@
 #    By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 13:52:24 by ldamiens          #+#    #+#              #
-#    Updated: 2021/11/23 15:55:53 by ldamiens         ###   ########.fr        #
+#    Updated: 2021/11/23 16:01:03 by ldamiens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,13 +90,6 @@ FLAGS			= -Wall -Wextra -Werror
 RM				= rm -rf
 LIBC			= ar rc
 MAKEFILE		= Makefile
-DIRECTORIES_TO_CREATE			= $(shell mkdir objs ; \
-									mkdir objs/char ; \
-									mkdir objs/int ; \
-									mkdir objs/list ; \
-									mkdir objs/memory ; \
-									mkdir objs/print ; \
-									mkdir objs/string)
 
 #=======================#
 #		  Target        #
@@ -131,4 +124,3 @@ fclean	: clean
 re : fclean all
 
 .PHONY	:		all bonus clean fclean re
-.SILENT :		createdir
