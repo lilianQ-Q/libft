@@ -6,7 +6,7 @@
 #    By: ldamiens <ldamiens@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 13:52:24 by ldamiens          #+#    #+#              #
-#    Updated: 2021/11/23 14:42:41 by ldamiens         ###   ########.fr        #
+#    Updated: 2021/11/23 15:55:53 by ldamiens         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,13 @@ FLAGS			= -Wall -Wextra -Werror
 RM				= rm -rf
 LIBC			= ar rc
 MAKEFILE		= Makefile
+DIRECTORIES_TO_CREATE			= $(shell mkdir objs ; \
+									mkdir objs/char ; \
+									mkdir objs/int ; \
+									mkdir objs/list ; \
+									mkdir objs/memory ; \
+									mkdir objs/print ; \
+									mkdir objs/string)
 
 #=======================#
 #		  Target        #
@@ -97,19 +104,21 @@ MAKEFILE		= Makefile
 
 #-------- Regles --------#
 
-all 	:		$(NAME)
+all 	:	$(NAME)
 
 $(NAME) :		$(OBJECT)
 					$(LIBC) $(NAME) $(OBJECT)
 
-bonus :			$(OBJECT) $(OBJECT_BONUS)
-					$(LIBC) $(NAME) $(OBJECT) $(OBJECT_BONUS)
+bonus 	:			$(OBJECT) $(OBJECT_BONUS)
+						$(LIBC) $(NAME) $(OBJECT) $(OBJECT_BONUS)
 
 $(PATH_OBJECT)/%.o :	$(PATH_SOURCE)/%.c $(INCLUDE) $(MAKEFILE)
-					$(CC) $(FLAGS) -I $(PATH_INCLUDE) -c $< -o $@
+							@mkdir -p $(@D)
+							$(CC) $(FLAGS) -I $(PATH_INCLUDE) -c $< -o $@
 
 $(PATH_OBJECT_BONUS)/%.o : $(PATH_SOURCE_BONUS)/%.c	$(INCLUDE) $(MAKEFILE)
-					$(CC) $(FLAGS) -I $(PATH_INCLUDE) -c $< -o $@
+								@mkdir -p $(@D)
+								$(CC) $(FLAGS) -I $(PATH_INCLUDE) -c $< -o $@
 
 #-------- Clean --------#
 
@@ -122,3 +131,4 @@ fclean	: clean
 re : fclean all
 
 .PHONY	:		all bonus clean fclean re
+.SILENT :		createdir
